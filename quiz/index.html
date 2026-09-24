@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132d3c">
+  <meta name="description" content="Um convite para perceber o que está tirando você do seu próprio rumo. Responda a 8 perguntas e receba uma reflexão feita para o seu momento.">
+  <title>O que está tirando você do seu próprio rumo? | Respira e Resolve</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23132d3c'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23d9b889' stroke-width='3'/%3E%3Cpath d='M32 13v38M13 32h38M19 19l26 26M45 19 19 45' stroke='%23d9b889' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23f5ede0'/%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:light;--navy:#132d3c;--navy2:#1d4252;--gold:#b98752;--cream:#f7f1e8;--paper:#fffcf7;--ink:#243744;--muted:#5b6a70;--line:#e4d9c9;--shadow:0 20px 60px rgba(19,45,60,.13)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 15%,#e7ece8 0,transparent 32%),radial-gradient(circle at 90% 90%,#e7d8c1 0,transparent 37%),var(--cream);font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.55}
+    button,a{font:inherit}
+    button{cursor:pointer}
+    .shell{width:min(100% - 32px,920px);margin:0 auto;padding:28px 0 38px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+    .brand{display:flex;align-items:center;gap:11px;color:var(--navy);text-decoration:none;font-size:.83rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .brand svg{flex:none;width:35px;height:35px}
+    .top-note{font-size:.8rem;color:var(--muted);text-align:right}
+    main{position:relative;overflow:hidden;min-height:565px;background:var(--paper);border:1px solid rgba(185,135,82,.24);border-radius:28px;box-shadow:var(--shadow)}
+    main:before{content:"";position:absolute;right:-90px;top:-120px;width:350px;height:350px;border:1px solid rgba(185,135,82,.18);border-radius:50%;box-shadow:0 0 0 56px rgba(185,135,82,.055),0 0 0 112px rgba(185,135,82,.035);pointer-events:none}
+    .panel{position:relative;z-index:1;padding:clamp(30px,7vw,72px);max-width:790px;margin:auto}
+    .eyebrow{margin:0 0 17px;text-transform:uppercase;font-size:.76rem;letter-spacing:.2em;color:#8a6036;font-weight:700}
+    h1,h2{font-family:Georgia,'Times New Roman',serif;color:var(--navy);letter-spacing:-.035em;line-height:1.13;margin:0 0 22px;font-weight:400}
+    h1{font-size:clamp(2.55rem,6vw,4.45rem)}
+    h2{font-size:clamp(2rem,4.7vw,3.35rem)}
+    p{font-size:1.05rem;margin:0 0 16px}
+    .lead{max-width:570px;font-size:clamp(1.06rem,2.2vw,1.22rem);color:#3e5058}
+    .start{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:32px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:13px 25px;border:1px solid var(--navy);border-radius:11px;background:var(--navy);color:white;text-decoration:none;font-weight:700;text-align:center;transition:transform .15s,background .15s,box-shadow .15s}
+    .button:hover{background:var(--navy2);box-shadow:0 8px 22px rgba(19,45,60,.16);transform:translateY(-1px)}
+    .button:focus-visible,.choice:focus-visible,.back:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    .small{font-size:.87rem;color:var(--muted)}
+    .compass{position:absolute;right:36px;bottom:25px;width:130px;height:130px;opacity:.17;color:var(--gold);pointer-events:none}
+    .progress-label{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+    .progress{height:7px;background:#ece6dc;border-radius:20px;overflow:hidden;margin-bottom:40px}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),#d6ad75);width:0;transition:width .25s}
+    .choices{display:grid;gap:12px;margin-top:29px}
+    .choice{width:100%;display:flex;align-items:center;gap:17px;text-align:left;padding:17px 20px;border:1px solid var(--line);border-radius:13px;background:white;color:var(--ink);font-size:1.04rem;line-height:1.45;transition:border-color .15s,background .15s,transform .15s}
+    .choice:hover{border-color:var(--gold);background:#fbf5eb;transform:translateX(3px)}
+    .choice .mark{flex:none;display:grid;place-items:center;width:33px;height:33px;border-radius:50%;background:#f1e6d5;color:#795630;font-weight:700;font-size:.8rem}
+    .nav{margin-top:26px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .back{border:0;background:none;padding:10px 0;color:var(--navy);font-size:.94rem;text-decoration:underline;text-underline-offset:4px}
+    .result-label{font-weight:700;color:#8a6036;margin-bottom:14px}
+    .result-text{max-width:640px}
+    .result-text p{margin-bottom:18px}
+    .reflection{padding:17px 19px;background:#f5eee4;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;margin:24px 0 28px;font-size:1.02rem}
+    .cta-box{margin-top:29px;padding:25px;border-radius:16px;background:var(--navy);color:#fff}
+    .cta-box h3{font-family:Georgia,'Times New Roman',serif;font-size:1.55rem;font-weight:400;line-height:1.2;margin:0 0 11px;color:#fff}
+    .cta-box p{font-size:.97rem;color:#e1e9e9;margin-bottom:20px}
+    .cta-box .button{background:#e5bf89;border-color:#e5bf89;color:#1b2d35}
+    .cta-box .button:hover{background:#f3d3a5}
+    .disclaimer{font-size:.8rem;color:var(--muted);margin:23px 0 0}
+    footer{color:var(--muted);text-align:center;margin-top:22px;font-size:.8rem}
+    [hidden]{display:none!important}
+    @media(max-width:650px){.shell{width:min(100% - 20px,920px);padding-top:14px}.top{margin-bottom:13px}.top-note{font-size:.72rem}.brand{letter-spacing:.08em;font-size:.72rem}.brand svg{width:29px;height:29px}main{border-radius:20px;min-height:calc(100dvh - 120px)}.panel{padding:34px 24px 42px}.progress{margin-bottom:32px}.choice{padding:15px;gap:12px}.compass{width:95px;height:95px;right:12px;bottom:10px}.cta-box{padding:20px}.cta-box .button{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="brand" aria-label="Respira e Resolve">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 7v50M7 32h50M14 14l36 36M50 14 14 50" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="32" r="6" fill="currentColor"/></svg>
+        Respira e Resolve
+      </div>
+      <div class="top-note">Um respiro para encontrar seu rumo</div>
+    </header>
+    <main id="main">
+      <section class="panel" id="intro" aria-labelledby="intro-title">
+        <p class="eyebrow">Uma conversa de poucos minutos</p>
+        <h1 id="intro-title">O que está tirando você do seu próprio rumo?</h1>
+        <p class="lead">Você cuida, trabalha, resolve, pensa nas contas… e, quando o dia acaba, parece que você ficou por último?</p>
+        <p class="lead">Responda a 8 perguntas. No final, receba uma reflexão sobre o que mais está pedindo cuidado agora.</p>
+        <div class="start"><button class="button" id="start" type="button">Quero descobrir <span aria-hidden="true">→</span></button><span class="small">Leva cerca de 2 minutos · sem cadastro</span></div>
+        <svg class="compass" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="6" fill="currentColor"/><path d="M50 8v84M8 50h84M21 21l58 58M79 21 21 79" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </section>
+      <section class="panel" id="quiz" aria-labelledby="question-title" hidden>
+        <div class="progress-label" id="progress-label"></div>
+        <div class="progress" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" id="progress"><div class="progress-fill" id="progress-fill"></div></div>
+        <p class="eyebrow">Escolha a resposta que mais parece com seus dias</p>
+        <h2 id="question-title" tabindex="-1"></h2>
+        <div class="choices" id="choices"></div>
+        <div class="nav"><button type="button" class="back" id="back">← Voltar</button><span class="small">Não existe resposta certa.</span></div>
+      </section>
+      <section class="panel" id="result" aria-labelledby="result-title" hidden>
+        <p class="eyebrow">Seu resultado</p>
+        <p class="result-label" id="result-label"></p>
+        <h2 id="result-title" tabindex="-1"></h2>
+        <div class="result-text" id="result-text"></div>
+        <div class="reflection" id="reflection"></div>
+        <div class="cta-box">
+          <h3>Seu próximo passo pode começar com um respiro.</h3>
+          <p>O Respira e Resolve é um percurso de 21 dias com reflexões e exercícios para cuidar da sua vida emocional e financeira, um passo de cada vez.</p>
+          <a class="button" id="checkout" href="https://pay.kiwify.com.br/kF6M3qQ" target="_blank" rel="noopener noreferrer">Conhecer o Respira e Resolve <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="disclaimer">Este quiz é uma ferramenta de reflexão, não uma avaliação clínica ou financeira.</p>
+        <button type="button" class="back" id="again">Refazer o quiz</button>
+      </section>
+    </main>
+    <footer>Respira. Escreve. Mova o leme.</footer>
+  </div>
+  <script>
+    const questions = [
+      {title:'Quando você acorda, qual pensamento costuma chegar primeiro?', options:['Já tenho tanta coisa para dar conta…','Preciso ver como vou pagar tudo.','Hoje eu começo a mudar. Mas logo bate a dúvida.']},
+      {title:'Quando sobra um tempinho só para você, o que acontece?', options:['Aparece alguma coisa de outra pessoa para resolver.','Tento relaxar, mas as preocupações com dinheiro continuam ali.','Penso no que poderia fazer para mudar de vida, sem saber por onde começar.']},
+      {title:'O que mais dói quando você pensa na sua rotina?', options:['Sentir que todos precisam de mim e ninguém percebe meu cansaço.','Trabalhar tanto e ainda ter medo de olhar para as contas.','Ter ideias e vontade, mas acabar adiando o que é importante para mim.']},
+      {title:'Uma despesa inesperada aparece. Qual é sua primeira reação?', options:['Era só o que faltava. Eu não aguento mais uma coisa.','Evito fazer as contas porque tenho medo do que vou encontrar.','Penso que preciso encontrar uma solução, mas travo tentando escolher a melhor.']},
+      {title:'Qual frase você já disse para si mesma?', options:['Se eu parar, tudo desanda.','O dinheiro entra e desaparece.','Só vou tentar quando tiver certeza de que vai dar certo.']},
+      {title:'Se alguém te perguntasse “como você está?”, qual seria a resposta mais sincera?', options:['Cansada, mas continuo fazendo o que precisa ser feito.','Preocupada. Minha cabeça não desliga das contas.','Frustrada. Sinto que poderia estar em outro lugar.']},
+      {title:'O que você mais gostaria de conseguir fazer sem culpa ou medo?', options:['Descansar e dizer “não” quando preciso.','Abrir minhas contas e tomar decisões com mais calma.','Dar um passo em direção ao que desejo, mesmo sem garantia de sucesso.']},
+      {title:'Se os próximos 30 dias fossem um pouco diferentes, o que você gostaria de sentir?', options:['Que não preciso carregar tudo sozinha.','Que consigo olhar para minha vida financeira sem fugir.','Que voltei a confiar em mim para começar.']}
+    ];
+    const results = [
+      {label:'Você está precisando de espaço para si',title:'Você está carregando peso demais',paragraphs:['Você virou a pessoa que lembra, organiza, acolhe e resolve. De tanto cuidar do que está à sua volta, ficou difícil perceber o que você precisa.','Seu primeiro passo não precisa ser mudar a vida inteira. Pode ser reconhecer o seu cansaço, respirar antes de aceitar mais uma tarefa e escolher um limite possível para esta semana.'],reflection:'Para começar: qual tarefa você pode dividir ou adiar nesta semana sem se culpar?',button:'Quero cuidar de quem conduz o barco'},
+      {label:'Sua mente está pedindo clareza',title:'O dinheiro ocupa espaço até quando você tenta descansar',paragraphs:['Talvez você adie abrir o aplicativo do banco, faça contas mentalmente antes de dormir ou sinta um aperto sempre que surge uma despesa. Olhar para isso pode assustar. Fugir também cansa.','O começo pode ser pequeno: reservar alguns minutos para anotar o que entra, o que sai e o que precisa de atenção primeiro. Sem bronca. Com clareza.'],reflection:'Para começar: qual conta ou número você consegue olhar hoje, por apenas cinco minutos?',button:'Quero começar sem fugir das contas'},
+      {label:'Seu desejo de mudar merece um primeiro passo',title:'Você quer mudar, mas espera ter certeza',paragraphs:['Você pensa, planeja e enxerga possibilidades. Então vem a pergunta: “E se eu tentar e não der certo?” Às vezes, essa dúvida pesa tanto que o primeiro passo nunca chega.','Você não precisa decidir hoje o rumo da vida inteira. Precisa escolher um passo pequeno o bastante para conseguir dar, mesmo com medo.'],reflection:'Para começar: qual passo de dez minutos você pode dar sem precisar saber como tudo vai terminar?',button:'Quero dar meu primeiro passo'}
+    ];
+    const intro=document.getElementById('intro'),quiz=document.getElementById('quiz'),result=document.getElementById('result');
+    const answers=Array(questions.length).fill(null);let current=0;
+    function show(section){[intro,quiz,result].forEach(item=>item.hidden=item!==section);window.scrollTo({top:0,behavior:'smooth'});}
+    function renderQuestion(){
+      show(quiz);const item=questions[current];
+      document.getElementById('question-title').textContent=item.title;
+      document.getElementById('progress-label').textContent=`Pergunta ${current+1} de ${questions.length}`;
+      document.getElementById('progress-fill').style.width=`${(current+1)/questions.length*100}%`;
+      document.getElementById('progress').setAttribute('aria-valuenow',String(current+1));
+      document.getElementById('back').textContent=current===0?'← Voltar ao início':'← Voltar';
+      const list=document.getElementById('choices');list.replaceChildren();
+      item.options.forEach((option,index)=>{
+        const button=document.createElement('button');button.type='button';button.className='choice';
+        const mark=document.createElement('span');mark.className='mark';mark.setAttribute('aria-hidden','true');mark.textContent=String.fromCharCode(65+index);
+        const caption=document.createElement('span');caption.textContent=option;button.append(mark,caption);
+        button.addEventListener('click',()=>{answers[current]=index;if(current===questions.length-1){renderResult()}else{current++;renderQuestion()}});
+        list.append(button);
+      });
+      document.getElementById('question-title').focus({preventScroll:true});
+    }
+    function renderResult(){
+      const counts=[0,0,0];answers.forEach(value=>counts[value]++);
+      const high=Math.max(...counts);const tied=counts.map((count,index)=>count===high?index:null).filter(index=>index!==null);
+      const index=tied.includes(answers[7])?answers[7]:tied[0];const item=results[index];
+      document.getElementById('result-label').textContent=item.label;
+      document.getElementById('result-title').textContent=item.title;
+      const area=document.getElementById('result-text');area.replaceChildren();
+      item.paragraphs.forEach(copy=>{const paragraph=document.createElement('p');paragraph.textContent=copy;area.append(paragraph)});
+      document.getElementById('reflection').textContent=item.reflection;
+      document.getElementById('checkout').firstChild.textContent=item.button+' ';
+      show(result);document.getElementById('result-title').focus({preventScroll:true});
+    }
+    document.getElementById('start').addEventListener('click',renderQuestion);
+    document.getElementById('back').addEventListener('click',()=>{if(current===0){show(intro);document.getElementById('start').focus({preventScroll:true})}else{current--;renderQuestion()}});
+    document.getElementById('again').addEventListener('click',()=>{answers.fill(null);current=0;renderQuestion()});
+  </script>
+</body>
+</html>
