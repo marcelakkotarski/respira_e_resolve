@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#132d3c">
-  <meta name="description" content="Um convite para perceber o que está tirando você do seu próprio rumo. Responda a 8 perguntas e receba uma reflexão feita para o seu momento.">
-  <title>O que está tirando você do seu próprio rumo? | Respira e Resolve</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23132d3c'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23d9b889' stroke-width='3'/%3E%3Cpath d='M32 13v38M13 32h38M19 19l26 26M45 19 19 45' stroke='%23d9b889' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23f5ede0'/%3E%3C/svg%3E">
+  <meta name="description" content="O que mais pesa na sua relação com o dinheiro hoje? Responda a 8 perguntas e receba uma reflexão para dar o próximo passo com mais clareza.">
+  <title>O que pesa na sua relação com o dinheiro? | Respira e Resolve Finanças</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23132d3c'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23d9b889' stroke-width='3'/%3E%3Cpath d='M23 34l6 6 13-17' fill='none' stroke='%23f5ede0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <style>
     :root{color-scheme:light;--navy:#132d3c;--navy2:#1d4252;--gold:#b98752;--cream:#f7f1e8;--paper:#fffcf7;--ink:#243744;--muted:#5b6a70;--line:#e4d9c9;--shadow:0 20px 60px rgba(19,45,60,.13)}
     *{box-sizing:border-box}
@@ -33,7 +33,6 @@
     .button:hover{background:var(--navy2);box-shadow:0 8px 22px rgba(19,45,60,.16);transform:translateY(-1px)}
     .button:focus-visible,.choice:focus-visible,.back:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     .small{font-size:.87rem;color:var(--muted)}
-    .compass{position:absolute;right:36px;bottom:25px;width:130px;height:130px;opacity:.17;color:var(--gold);pointer-events:none}
     .progress-label{font-size:.85rem;color:var(--muted);margin-bottom:10px}
     .progress{height:7px;background:#ece6dc;border-radius:20px;overflow:hidden;margin-bottom:40px}
     .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),#d6ad75);width:0;transition:width .25s}
@@ -55,7 +54,7 @@
     .disclaimer{font-size:.8rem;color:var(--muted);margin:23px 0 0}
     footer{color:var(--muted);text-align:center;margin-top:22px;font-size:.8rem}
     [hidden]{display:none!important}
-    @media(max-width:650px){.shell{width:min(100% - 20px,920px);padding-top:14px}.top{margin-bottom:13px}.top-note{font-size:.72rem}.brand{letter-spacing:.08em;font-size:.72rem}.brand svg{width:29px;height:29px}main{border-radius:20px;min-height:calc(100dvh - 120px)}.panel{padding:34px 24px 42px}.progress{margin-bottom:32px}.choice{padding:15px;gap:12px}.compass{width:95px;height:95px;right:12px;bottom:10px}.cta-box{padding:20px}.cta-box .button{width:100%}}
+    @media(max-width:650px){.shell{width:min(100% - 20px,920px);padding-top:14px}.top{margin-bottom:13px}.top-note{display:none}.brand{letter-spacing:.08em;font-size:.72rem}.brand svg{width:29px;height:29px}main{border-radius:20px;min-height:calc(100dvh - 120px)}.panel{padding:34px 24px 42px}.progress{margin-bottom:32px}.choice{padding:15px;gap:12px}.cta-box{padding:20px}.cta-box .button{width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
@@ -63,19 +62,18 @@
   <div class="shell">
     <header class="top">
       <div class="brand" aria-label="Respira e Resolve">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 7v50M7 32h50M14 14l36 36M50 14 14 50" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="32" r="6" fill="currentColor"/></svg>
-        Respira e Resolve
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 34l10 10 19-25" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Respira e Resolve Finanças
       </div>
-      <div class="top-note">Um respiro para encontrar seu rumo</div>
+      <div class="top-note">Um respiro para olhar para o dinheiro</div>
     </header>
     <main id="main">
       <section class="panel" id="intro" aria-labelledby="intro-title">
         <p class="eyebrow">Uma conversa de poucos minutos</p>
-        <h1 id="intro-title">O que está tirando você do seu próprio rumo?</h1>
-        <p class="lead">Você cuida, trabalha, resolve, pensa nas contas… e, quando o dia acaba, parece que você ficou por último?</p>
-        <p class="lead">Responda a 8 perguntas. No final, receba uma reflexão sobre o que mais está pedindo cuidado agora.</p>
+        <h1 id="intro-title">O que mais pesa na sua relação com o dinheiro hoje?</h1>
+        <p class="lead">Você trabalha, paga o que pode, pensa nas contas até na hora de dormir… e sente que nunca consegue respirar de verdade?</p>
+        <p class="lead">Em 8 perguntas, vamos olhar com carinho para o ponto da sua vida financeira que mais precisa de atenção agora.</p>
         <div class="start"><button class="button" id="start" type="button">Quero descobrir <span aria-hidden="true">→</span></button><span class="small">Leva cerca de 2 minutos · sem cadastro</span></div>
-        <svg class="compass" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="6" fill="currentColor"/><path d="M50 8v84M8 50h84M21 21l58 58M79 21 21 79" fill="none" stroke="currentColor" stroke-width="2"/></svg>
       </section>
       <section class="panel" id="quiz" aria-labelledby="question-title" hidden>
         <div class="progress-label" id="progress-label"></div>
@@ -92,31 +90,32 @@
         <div class="result-text" id="result-text"></div>
         <div class="reflection" id="reflection"></div>
         <div class="cta-box">
-          <h3>Seu próximo passo pode começar com um respiro.</h3>
-          <p>O Respira e Resolve é um percurso de 21 dias com reflexões e exercícios para cuidar da sua vida emocional e financeira, um passo de cada vez.</p>
+          <h3>Você pode começar a olhar para o dinheiro sem se machucar no processo.</h3>
+          <p>No Respira e Resolve Finanças, você percorre 21 dias de reflexões e exercícios sobre emoções, crenças e decisões financeiras. Um passo possível por dia.</p>
           <a class="button" id="checkout" href="https://pay.kiwify.com.br/kF6M3qQ" target="_blank" rel="noopener noreferrer">Conhecer o Respira e Resolve <span aria-hidden="true">↗</span></a>
         </div>
         <p class="disclaimer">Este quiz é uma ferramenta de reflexão, não uma avaliação clínica ou financeira.</p>
         <button type="button" class="back" id="again">Refazer o quiz</button>
       </section>
     </main>
-    <footer>Respira. Escreve. Mova o leme.</footer>
+    <footer>Respira. Olha para o que é possível. Dá o próximo passo.</footer>
   </div>
   <script>
     const questions = [
-      {title:'Quando você acorda, qual pensamento costuma chegar primeiro?', options:['Já tenho tanta coisa para dar conta…','Preciso ver como vou pagar tudo.','Hoje eu começo a mudar. Mas logo bate a dúvida.']},
-      {title:'Quando sobra um tempinho só para você, o que acontece?', options:['Aparece alguma coisa de outra pessoa para resolver.','Tento relaxar, mas as preocupações com dinheiro continuam ali.','Penso no que poderia fazer para mudar de vida, sem saber por onde começar.']},
-      {title:'O que mais dói quando você pensa na sua rotina?', options:['Sentir que todos precisam de mim e ninguém percebe meu cansaço.','Trabalhar tanto e ainda ter medo de olhar para as contas.','Ter ideias e vontade, mas acabar adiando o que é importante para mim.']},
-      {title:'Uma despesa inesperada aparece. Qual é sua primeira reação?', options:['Era só o que faltava. Eu não aguento mais uma coisa.','Evito fazer as contas porque tenho medo do que vou encontrar.','Penso que preciso encontrar uma solução, mas travo tentando escolher a melhor.']},
-      {title:'Qual frase você já disse para si mesma?', options:['Se eu parar, tudo desanda.','O dinheiro entra e desaparece.','Só vou tentar quando tiver certeza de que vai dar certo.']},
-      {title:'Se alguém te perguntasse “como você está?”, qual seria a resposta mais sincera?', options:['Cansada, mas continuo fazendo o que precisa ser feito.','Preocupada. Minha cabeça não desliga das contas.','Frustrada. Sinto que poderia estar em outro lugar.']},
-      {title:'O que você mais gostaria de conseguir fazer sem culpa ou medo?', options:['Descansar e dizer “não” quando preciso.','Abrir minhas contas e tomar decisões com mais calma.','Dar um passo em direção ao que desejo, mesmo sem garantia de sucesso.']},
-      {title:'Se os próximos 30 dias fossem um pouco diferentes, o que você gostaria de sentir?', options:['Que não preciso carregar tudo sozinha.','Que consigo olhar para minha vida financeira sem fugir.','Que voltei a confiar em mim para começar.']}
+      {title:'Quando o dinheiro entra, o que acontece primeiro dentro de você?', options:['Penso em tudo o que preciso pagar por mim e pela família.','Sinto alívio, mas evito conferir quanto já está comprometido.','Vou resolvendo o urgente e depois não sei para onde o dinheiro foi.','Penso que preciso ganhar mais, mas não sei se consigo.']},
+      {title:'Uma conta inesperada aparece. Qual reação parece mais sua?', options:['Assumo que tenho de encontrar uma solução sozinha.','Deixo a mensagem ou a fatura fechada por um tempo.','Parcelo ou remanejo gastos sem conseguir ver o mês inteiro.','Penso numa forma de fazer renda extra, mas tenho medo de tentar.']},
+      {title:'Quando você pensa no fim do mês, qual frase vem à cabeça?', options:['Dei conta das necessidades de todo mundo, menos das minhas.','Tenho receio de descobrir o valor total das contas.','O dinheiro acabou, e eu não consegui acompanhar os gastos.','Eu queria oferecer meu trabalho ou começar algo, mas continuo adiando.']},
+      {title:'Você precisa comprar algo para si. O que mais pesa na decisão?', options:['Sinto culpa porque sempre há alguém precisando de alguma coisa.','Tenho medo de abrir o saldo e confirmar que não dá.','Não sei quanto posso gastar sem apertar o resto do mês.','Penso que só vou merecer quando conseguir ganhar mais.']},
+      {title:'Qual conversa sobre dinheiro é mais difícil para você?', options:['Dizer que não posso assumir mais uma despesa da família.','Falar com clareza sobre dívidas ou contas atrasadas.','Combinar prioridades e limites para os gastos do mês.','Cobrar pelo meu trabalho ou contar que quero vender algo.']},
+      {title:'Se aparecesse uma oportunidade de melhorar sua renda, o que te travaria?', options:['Minha rotina já está tão cheia que não sei onde caberia.','A preocupação com as contas atuais não me deixa pensar nisso.','Eu não saberia calcular custos, preço ou quanto precisaria ganhar.','O medo de fracassar, ser julgada ou não ser escolhida.']},
+      {title:'O que traria um pouco de alívio para sua vida financeira agora?', options:['Dividir responsabilidades e poder dizer “não” a um gasto.','Olhar os números sem sentir vontade de fugir.','Saber o que entra, o que sai e o que precisa vir primeiro.','Ter coragem de dar um primeiro passo para ganhar dinheiro.']},
+      {title:'Daqui a 30 dias, qual mudança você mais gostaria de perceber?', options:['Que não estou sustentando tudo sozinha.','Que conheço minhas contas e consigo encará-las.','Que tenho um plano simples para o dinheiro do mês.','Que tentei uma ideia ou fiz uma oferta, mesmo com medo.']}
     ];
     const results = [
-      {label:'Você está precisando de espaço para si',title:'Você está carregando peso demais',paragraphs:['Você virou a pessoa que lembra, organiza, acolhe e resolve. De tanto cuidar do que está à sua volta, ficou difícil perceber o que você precisa.','Seu primeiro passo não precisa ser mudar a vida inteira. Pode ser reconhecer o seu cansaço, respirar antes de aceitar mais uma tarefa e escolher um limite possível para esta semana.'],reflection:'Para começar: qual tarefa você pode dividir ou adiar nesta semana sem se culpar?',button:'Quero cuidar de quem conduz o barco'},
-      {label:'Sua mente está pedindo clareza',title:'O dinheiro ocupa espaço até quando você tenta descansar',paragraphs:['Talvez você adie abrir o aplicativo do banco, faça contas mentalmente antes de dormir ou sinta um aperto sempre que surge uma despesa. Olhar para isso pode assustar. Fugir também cansa.','O começo pode ser pequeno: reservar alguns minutos para anotar o que entra, o que sai e o que precisa de atenção primeiro. Sem bronca. Com clareza.'],reflection:'Para começar: qual conta ou número você consegue olhar hoje, por apenas cinco minutos?',button:'Quero começar sem fugir das contas'},
-      {label:'Seu desejo de mudar merece um primeiro passo',title:'Você quer mudar, mas espera ter certeza',paragraphs:['Você pensa, planeja e enxerga possibilidades. Então vem a pergunta: “E se eu tentar e não der certo?” Às vezes, essa dúvida pesa tanto que o primeiro passo nunca chega.','Você não precisa decidir hoje o rumo da vida inteira. Precisa escolher um passo pequeno o bastante para conseguir dar, mesmo com medo.'],reflection:'Para começar: qual passo de dez minutos você pode dar sem precisar saber como tudo vai terminar?',button:'Quero dar meu primeiro passo'}
+      {label:'O peso está nas suas costas',title:'Você sente que precisa dar conta de tudo',paragraphs:['Quando uma conta aparece, parece que a solução precisa sair de você. Você pensa nas necessidades de todos e quase sempre coloca as suas no fim da fila. Isso cansa até quando as contas estão em dia.','Olhar para o dinheiro também é conversar sobre o que cabe a cada pessoa e onde você precisa colocar um limite. Você pode começar por uma despesa pequena que costuma assumir no automático.'],reflection:'Para começar: qual despesa ou responsabilidade financeira você precisa conversar com alguém, em vez de carregar sozinha?',button:'Quero olhar para esse peso com carinho'},
+      {label:'O medo aparece antes dos números',title:'Olhar para as contas virou uma fonte de ansiedade',paragraphs:['Você sabe que precisa conferir valores, prazos e saldos. Mesmo assim, abrir a fatura pode trazer um aperto que faz você deixar para depois. Não é preguiça: o desconforto é real.','Um primeiro passo possível é olhar para um número de cada vez, sem exigir que você resolva tudo hoje. Conhecer a situação ajuda a escolher o que precisa de atenção primeiro.'],reflection:'Para começar: qual conta você consegue abrir e apenas anotar o valor e o vencimento?',button:'Quero começar a olhar sem fugir'},
+      {label:'Falta um mapa simples para o mês',title:'O dinheiro passa e você perde o fio das contas',paragraphs:['Você vai pagando o que aparece, remanejando valores e tentando chegar ao fim do mês. Quando percebe, fica difícil dizer para onde foi o dinheiro e o que ainda precisa ser pago.','Isso não significa que toda dificuldade se resolve cortando gastos. Se a renda não cobre o essencial, essa informação também precisa aparecer. Anotar entradas, despesas e prioridades ajuda você a enxergar o mês como ele é.'],reflection:'Para começar: anote o que entra, as contas essenciais e uma despesa variável. O que esse retrato mostra?',button:'Quero organizar um passo de cada vez'},
+      {label:'O desejo de crescer encontra o medo',title:'Você quer melhorar a renda, mas trava na hora de agir',paragraphs:['Talvez você tenha uma habilidade, um produto ou uma ideia. Mas, quando pensa em cobrar, vender ou começar, surge a dúvida: “E se ninguém me escolher?” Essa pergunta pode adiar seus planos por muito tempo.','Você não precisa ter certeza de que vai dar certo para fazer uma tentativa pequena. Pode começar calculando um preço, descrevendo sua oferta ou conversando com uma pessoa interessada.'],reflection:'Para começar: qual ação de dez minutos ajudaria você a testar sua ideia sem apostar tudo nela?',button:'Quero dar um primeiro passo com coragem'}
     ];
     const intro=document.getElementById('intro'),quiz=document.getElementById('quiz'),result=document.getElementById('result');
     const answers=Array(questions.length).fill(null);let current=0;
@@ -139,7 +138,7 @@
       document.getElementById('question-title').focus({preventScroll:true});
     }
     function renderResult(){
-      const counts=[0,0,0];answers.forEach(value=>counts[value]++);
+      const counts=[0,0,0,0];answers.forEach(value=>counts[value]++);
       const high=Math.max(...counts);const tied=counts.map((count,index)=>count===high?index:null).filter(index=>index!==null);
       const index=tied.includes(answers[7])?answers[7]:tied[0];const item=results[index];
       document.getElementById('result-label').textContent=item.label;
