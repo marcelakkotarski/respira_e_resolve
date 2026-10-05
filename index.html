@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQZS8NS4BD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VQZS8NS4BD');
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0f3340" />
@@ -229,7 +237,7 @@ let current=0, scores={overload:0,avoidance:0,sabotage:0,boundaries:0};
 const intro=document.getElementById('intro'),quiz=document.getElementById('quiz'),interlude=document.getElementById('interlude'),result=document.getElementById('result');
 const qCount=document.getElementById('qCount'),qText=document.getElementById('qText'),answers=document.getElementById('answers'),progress=document.getElementById('progress');
 
-document.getElementById('startBtn').onclick=()=>{intro.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion()};
+document.getElementById('startBtn').onclick=()=>{gtag('event', 'quiz_start');intro.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion()};
 
 document.getElementById('continueBtn').onclick=()=>{interlude.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion()};
 
@@ -264,6 +272,7 @@ function showInterlude(n){
 }
 
 function showResult(){
+  gtag('event', 'quiz_complete');
   quiz.classList.add('hidden');result.classList.remove('hidden');progress.style.width='100%';
   const winner=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
   const d=resultData[winner];
@@ -273,6 +282,9 @@ function showResult(){
   document.getElementById('firstStep').textContent=d.step;
   window.scrollTo({top:0,behavior:'smooth'});
 }
+document.querySelector('.offer a.cta').addEventListener('click', () => {
+  gtag('event', 'checkout_click', {transport_type: 'beacon'});
+});
 </script>
 </body>
 </html>
