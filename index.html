@@ -126,11 +126,11 @@
         <h2>Ouça um trecho dos primeiros cinco dias</h2>
         <p>Estamos preparando amostras de até 3 minutos dos conteúdos originais. Enquanto isso, veja o tema de cada dia:</p>
         <div class="sample-list">
-          <article class="sample"><span class="sample-day">Dia 01</span><div><h3>Neuroplasticidade</h3><p>Como novos aprendizados e práticas podem apoiar mudanças ao longo do tempo.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
-          <article class="sample"><span class="sample-day">Dia 02</span><div><h3>Sua história pessoal</h3><p>Um olhar para experiências anteriores e para a forma como interpretamos nossa história.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
-          <article class="sample"><span class="sample-day">Dia 03</span><div><h3>Temperamento</h3><p>Conheça diferenças de estilo e de reação diante dos desafios.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
-          <article class="sample"><span class="sample-day">Dia 04</span><div><h3>Crenças limitantes</h3><p>Observe ideias que influenciam suas escolhas e explore novas perspectivas.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
-          <article class="sample"><span class="sample-day">Dia 05</span><div><h3>Criança interior e gatilhos</h3><p>Reflita sobre sentimentos e reações com mais atenção e acolhimento.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 01</span><div><h3>Neuroplasticidade</h3><p>Como novos aprendizados e práticas podem apoiar mudanças ao longo do tempo.</p><audio controls preload="none" class="preview-audio" data-day="1" aria-label="Ouvir prévia do dia 1" src="1%C2%BA%20dia%20parte%201.mp3"></audio><span class="sample-pending">Prévia: até 3 minutos</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 02</span><div><h3>Sua história pessoal</h3><p>Um olhar para experiências anteriores e para a forma como interpretamos nossa história.</p><audio controls preload="none" class="preview-audio" data-day="2" aria-label="Ouvir prévia do dia 2" src="2%C2%BA%20dia%20parte%201.mp3"></audio><span class="sample-pending">Prévia: até 3 minutos</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 03</span><div><h3>Temperamento</h3><p>Conheça diferenças de estilo e de reação diante dos desafios.</p><audio controls preload="none" class="preview-audio" data-day="3" aria-label="Ouvir prévia do dia 3" src="dia%203%20parte%201.mp3"></audio><span class="sample-pending">Prévia: até 3 minutos</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 04</span><div><h3>Crenças limitantes</h3><p>Observe ideias que influenciam suas escolhas e explore novas perspectivas.</p><audio controls preload="none" class="preview-audio" data-day="4" aria-label="Ouvir prévia do dia 4" src="dia%204%20p%201.mp3"></audio><span class="sample-pending">Prévia: até 3 minutos</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 05</span><div><h3>Criança interior e gatilhos</h3><p>Reflita sobre sentimentos e reações com mais atenção e acolhimento.</p><audio controls preload="none" class="preview-audio" data-day="5" aria-label="Ouvir prévia do dia 5" src="dia%205%20p1.mp3"></audio><span class="sample-pending">Prévia: até 3 minutos</span></div></article>
         </div>
       </div>
       <div class="offer">
@@ -326,6 +326,16 @@ function showResult(){
   document.getElementById('firstStep').textContent=d.step;
   window.scrollTo({top:0,behavior:'smooth'});
 }
+document.querySelectorAll('.preview-audio').forEach(audio=>{
+  let tracked=false;
+  audio.addEventListener('play',()=>{
+    if(audio.currentTime>=180)audio.currentTime=0;
+    document.querySelectorAll('.preview-audio').forEach(other=>{if(other!==audio)other.pause();});
+    if(!tracked){gtag('event','audio_preview_play',{day_number:audio.dataset.day});tracked=true;}
+  });
+  audio.addEventListener('timeupdate',()=>{if(audio.currentTime>=180){audio.pause();audio.currentTime=180;}});
+  audio.addEventListener('seeking',()=>{if(audio.currentTime>180)audio.currentTime=180;});
+});
 document.querySelectorAll('.offer a.cta').forEach(a=>a.addEventListener('click', () => {
   gtag('event', 'checkout_click', {transport_type: 'beacon', checkout_origin: a.closest('#program') ? 'program' : 'quiz_result'});
   if(typeof fbq==='function')fbq('track','InitiateCheckout');
