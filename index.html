@@ -66,6 +66,9 @@
     .guarantee{font-size:.82rem;color:#d9e5e3;margin:14px 0 0}
     .footer{text-align:center;font-size:.75rem;color:var(--muted);padding:16px 20px 28px}
     @media(max-width:680px){.top{padding:14px 17px}.mini{display:none}.content{padding:30px 21px}.intro-points,.features{grid-template-columns:1fr}.card{border-radius:22px}.progress-wrap{max-width:130px}.answer{padding:15px}.offer{padding:24px 20px}}
+
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 10px}.hero-actions .cta{flex:1 1 210px;cursor:pointer}.cta-quiet{background:transparent!important;color:var(--green)!important;border:1.5px solid var(--green)!important;box-shadow:none!important}
+    .backlink{border:0;background:none;color:var(--green);cursor:pointer;font-weight:700;padding:0 0 20px}.program-cover{display:block;width:min(100%,430px);max-height:320px;object-fit:contain;margin:26px auto;border-radius:16px}.program-benefits,.sample-section{margin:34px 0}.program-benefits h2,.sample-section h2{font-family:"Playfair Display",serif;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2}.program-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}.program-tiles>div{border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:16px}.program-tiles strong,.program-tiles span{display:block}.program-tiles span{color:var(--muted);font-size:.9rem;margin-top:5px}.sample-list{display:grid;gap:10px;margin-top:20px}.sample{display:flex;gap:14px;background:var(--paper);padding:18px;border-radius:16px;border:1px solid var(--line)}.sample-day{color:var(--green);font-weight:800;white-space:nowrap;padding-top:3px}.sample h3{margin:0 0 5px;font-size:1.07rem}.sample p{margin:0 0 8px;color:var(--muted)}.sample-pending{font-size:.82rem;color:var(--muted);font-style:italic}.sample audio{width:100%;max-width:420px;margin-top:7px}.program-quiz-link{text-align:center;margin:24px 0}.program-quiz-link button{background:none;color:var(--green);border:0;text-decoration:underline;cursor:pointer;font-weight:700}.sample-section .eyebrow{margin-bottom:8px}@media(max-width:650px){.program-tiles{grid-template-columns:1fr}.sample{padding:13px}.hero-actions{flex-direction:column}.hero-actions .cta{flex:auto}}
   </style>
   <!-- Meta Pixel Code -->
   <script>
@@ -94,16 +97,51 @@
     </header>
 
     <section id="intro" class="content">
-      <p class="eyebrow">Quiz de 2 minutos</p>
-      <h1>Talvez você não esteja sem força. Talvez esteja tentando carregar coisas demais ao mesmo tempo.</h1>
-      <p class="lead">Responda 10 perguntas sobre sua relação com dinheiro, decisões, culpa, limites e projetos. No final, você recebe uma leitura do padrão que mais aparece nas suas respostas e um próximo passo possível.</p>
+      <p class="eyebrow">Respira e Resolve • um caminho de 21 dias</p>
+      <h1>Você não precisa resolver toda a sua vida hoje. Precisa encontrar um próximo passo.</h1>
+      <p class="lead">Um programa de autoconhecimento e organização emocional e financeira para reconhecer padrões, lidar melhor com a sobrecarga e transformar reflexões em pequenas atitudes possíveis — um dia de cada vez.</p>
       <div class="intro-points">
         <div>💭 Sem certo ou errado. Responda pelo que acontece de verdade.</div>
         <div>🧭 O resultado não é diagnóstico. É uma ferramenta de autorreflexão.</div>
         <div>⏱️ Você termina em cerca de 2 minutos.</div>
       </div>
-      <button class="cta" id="startBtn">Começar o quiz →</button>
+      <div class="hero-actions"><button class="cta" id="knowBtn" type="button">Conhecer o programa →</button><button class="cta cta-quiet" id="startBtn" type="button">Fazer o quiz de 2 minutos</button></div>
       <p class="note">Suas respostas ficam apenas nesta página e não são enviadas para nós.</p>
+    </section>
+
+
+    <section id="program" class="content hidden" aria-label="Conhecer o programa">
+      <button class="backlink" id="backIntro" type="button">← Voltar ao início</button>
+      <p class="eyebrow">Conheça o programa</p>
+      <h1>21 dias para mudar a forma de olhar para si, suas escolhas e seu dinheiro.</h1>
+      <p class="lead">O Respira e Resolve é um percurso guiado de reflexão e prática. Você avança no seu ritmo, com conteúdos sobre emoções, hábitos, limites e decisões financeiras — sem promessas de soluções mágicas.</p>
+      <img src="capa.png" alt="Capa do programa Respira e Resolve" class="program-cover" loading="lazy">
+      <div class="program-benefits">
+        <h2>Como funciona na prática?</h2>
+        <p>Um tema por dia, com explicações acessíveis, exercícios de escrita e pequenas práticas para levar o aprendizado à vida real.</p>
+        <div class="program-tiles"><div><strong>Primeiros 7 dias</strong><span>Perceba seus padrões e sua história.</span></div><div><strong>Segunda semana</strong><span>Compreenda emoções e comportamentos.</span></div><div><strong>Terceira semana</strong><span>Pratique escolhas e organize os próximos passos.</span></div></div>
+      </div>
+      <div class="sample-section" id="amostras">
+        <p class="eyebrow">Um gostinho do percurso</p>
+        <h2>Ouça um trecho dos primeiros cinco dias</h2>
+        <p>Estamos preparando amostras de até 3 minutos dos conteúdos originais. Enquanto isso, veja o tema de cada dia:</p>
+        <div class="sample-list">
+          <article class="sample"><span class="sample-day">Dia 01</span><div><h3>Neuroplasticidade</h3><p>Como novos aprendizados e práticas podem apoiar mudanças ao longo do tempo.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 02</span><div><h3>Sua história pessoal</h3><p>Um olhar para experiências anteriores e para a forma como interpretamos nossa história.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 03</span><div><h3>Temperamento</h3><p>Conheça diferenças de estilo e de reação diante dos desafios.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 04</span><div><h3>Crenças limitantes</h3><p>Observe ideias que influenciam suas escolhas e explore novas perspectivas.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
+          <article class="sample"><span class="sample-day">Dia 05</span><div><h3>Criança interior e gatilhos</h3><p>Reflita sobre sentimentos e reações com mais atenção e acolhimento.</p><span class="sample-pending">Áudio de demonstração em preparação</span></div></article>
+        </div>
+      </div>
+      <div class="offer">
+        <p class="eyebrow" style="color:#e7c98e">Seu próximo passo pode começar aqui</p>
+        <h2>Respira e Resolve</h2>
+        <p>21 dias de reflexões, exercícios e práticas para cuidar da sua relação com as emoções, os limites e o dinheiro.</p>
+        <div class="features"><div class="feature">✓ Um tema para cada dia</div><div class="feature">✓ Exercícios e materiais complementares</div><div class="feature">✓ Práticas de presença e autocuidado</div><div class="feature">✓ Reflexão e organização financeira</div></div>
+        <a class="cta" href="https://pay.hotmart.com/Q107708986Q" target="_blank" rel="noopener">Quero começar meus 21 dias →</a>
+        <p class="guarantee">Checkout na Hotmart • Consulte as condições de compra e garantia na plataforma.</p>
+      </div>
+      <p class="program-quiz-link">Quer refletir sobre seus padrões antes de decidir? <button id="startFromProgram" type="button">Faça o quiz gratuito →</button></p>
     </section>
 
     <section id="quiz" class="content hidden">
@@ -237,7 +275,13 @@ let current=0, scores={overload:0,avoidance:0,sabotage:0,boundaries:0};
 const intro=document.getElementById('intro'),quiz=document.getElementById('quiz'),interlude=document.getElementById('interlude'),result=document.getElementById('result');
 const qCount=document.getElementById('qCount'),qText=document.getElementById('qText'),answers=document.getElementById('answers'),progress=document.getElementById('progress');
 
-document.getElementById('startBtn').onclick=()=>{gtag('event', 'quiz_start');intro.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion()};
+const program=document.getElementById('program');
+function showProgram(){gtag('event','program_view',{content_type:'program_presentation'});intro.classList.add('hidden');result.classList.add('hidden');quiz.classList.add('hidden');interlude.classList.add('hidden');program.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+function startQuiz(){gtag('event', 'quiz_start');intro.classList.add('hidden');program.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}
+document.getElementById('knowBtn').onclick=showProgram;
+document.getElementById('backIntro').onclick=()=>{program.classList.add('hidden');intro.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});};
+document.getElementById('startBtn').onclick=startQuiz;
+document.getElementById('startFromProgram').onclick=startQuiz;
 
 document.getElementById('continueBtn').onclick=()=>{interlude.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion()};
 
@@ -282,9 +326,10 @@ function showResult(){
   document.getElementById('firstStep').textContent=d.step;
   window.scrollTo({top:0,behavior:'smooth'});
 }
-document.querySelector('.offer a.cta').addEventListener('click', () => {
-  gtag('event', 'checkout_click', {transport_type: 'beacon'});
-});
+document.querySelectorAll('.offer a.cta').forEach(a=>a.addEventListener('click', () => {
+  gtag('event', 'checkout_click', {transport_type: 'beacon', checkout_origin: a.closest('#program') ? 'program' : 'quiz_result'});
+  if(typeof fbq==='function')fbq('track','InitiateCheckout');
+}));
 </script>
 </body>
 </html>
