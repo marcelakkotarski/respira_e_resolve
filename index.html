@@ -390,7 +390,7 @@ document.querySelectorAll('.offer a.cta').forEach(a=>a.addEventListener('click',
 }));
 
 // Atribuição de cliques no checkout: mantém a medição GA4 e Meta independente do pagamento.
-document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(link=>{
+document.querySelectorAll('.sales-page a.checkout-link').forEach(link=>{
   link.addEventListener('click',()=>{
     if(typeof gtag==='function'){gtag('event','checkout_click',{link_url:link.href,source_section:link.closest('section')?.id||'unknown'});gtag('event','begin_checkout',{currency:'BRL'});}
     if(typeof fbq==='function'){fbq('track','InitiateCheckout');}
