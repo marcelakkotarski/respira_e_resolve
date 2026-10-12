@@ -20,8 +20,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0f3340" />
-  <meta name="description" content="Respira e Resolve — descubra quais padrões estão deixando sua vida mental e financeira mais pesada e conheça um caminho prático de 21 dias." />
-  <title>Respira e Resolve | Quiz</title>
+  <meta name="description" content="Você cuida de tudo. Mas quem cuida de você? Respira e Resolve: uma jornada guiada de 21 dias para cuidar das emoções, decisões e relação com o dinheiro." />
+  <title>Respira e Resolve | 21 dias para mudar seu rumo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -77,6 +77,17 @@
 
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 10px}.hero-actions .cta{flex:1 1 210px;cursor:pointer}.cta-quiet{background:transparent!important;color:var(--green)!important;border:1.5px solid var(--green)!important;box-shadow:none!important}
     .backlink{border:0;background:none;color:var(--green);cursor:pointer;font-weight:700;padding:0 0 20px}.program-cover{display:block;width:min(100%,430px);max-height:320px;object-fit:contain;margin:26px auto;border-radius:16px}.program-benefits,.sample-section{margin:34px 0}.program-benefits h2,.sample-section h2{font-family:"Playfair Display",serif;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2}.program-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}.program-tiles>div{border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:16px}.program-tiles strong,.program-tiles span{display:block}.program-tiles span{color:var(--muted);font-size:.9rem;margin-top:5px}.sample-list{display:grid;gap:10px;margin-top:20px}.sample{display:flex;gap:14px;background:var(--paper);padding:18px;border-radius:16px;border:1px solid var(--line)}.sample-day{color:var(--green);font-weight:800;white-space:nowrap;padding-top:3px}.sample h3{margin:0 0 5px;font-size:1.07rem}.sample p{margin:0 0 8px;color:var(--muted)}.sample-pending{font-size:.82rem;color:var(--muted);font-style:italic}.sample audio{width:100%;max-width:420px;margin-top:7px}.program-quiz-link{text-align:center;margin:24px 0}.program-quiz-link button{background:none;color:var(--green);border:0;text-decoration:underline;cursor:pointer;font-weight:700}.sample-section .eyebrow{margin-bottom:8px}@media(max-width:650px){.program-tiles{grid-template-columns:1fr}.sample{padding:13px}.hero-actions{flex-direction:column}.hero-actions .cta{flex:auto}}
+    /* Página de vendas: identificação emocional, leitura rápida e caminho direto à oferta */
+    .sales-page{padding:0}.sales-fold{padding:clamp(34px,7vw,66px) clamp(25px,7vw,66px);border-bottom:1px solid var(--line)}
+    .sales-fold:first-child{padding-top:clamp(42px,8vw,84px)}.sales-fold h1{font-size:clamp(2.6rem,6.6vw,4.7rem);line-height:1.08}.sales-fold h1 em{font-style:normal;color:#a6793e}
+    .sales-fold h2{font-size:clamp(2rem,4.4vw,3.25rem);line-height:1.2}.sales-fold p:not(.eyebrow){max-width:660px;line-height:1.75;color:#50676b;font-size:1.08rem}
+    .sales-fold .sales-emphasis{font-family:"Playfair Display",serif;color:var(--green2)!important;font-size:clamp(1.3rem,2.8vw,1.75rem)!important;line-height:1.4!important;margin:24px 0}
+    .sales-fold .cta{margin-top:15px;text-align:center;max-width:100%;width:auto}.sales-fold .microcopy{font-size:.78rem!important;color:#788783!important;margin-top:12px}
+    .warm-fold{background:#f3ebde}.dark-fold{background:#173d42}.dark-fold h2,.dark-fold .sales-emphasis{color:#fff6ea!important}.dark-fold p{color:#e1e9e7!important}.dark-fold .eyebrow{color:#e9cb93}
+    .sales-chips{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0}.sales-chips span{border:1px solid #d9d4c7;border-radius:99px;padding:9px 12px;color:#315f58;font-size:.87rem;background:#fffaf3}
+    .closing-fold{text-align:center}.closing-fold p{margin-left:auto;margin-right:auto}.quiet-options{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+    .quiet-options button{background:none;border:0;text-decoration:underline;color:var(--green);font-weight:600;cursor:pointer}
+    @media(max-width:680px){.sales-fold .cta{display:flex;width:100%}.sales-fold{padding:35px 22px}.sales-fold h1{font-size:2.65rem}}
   </style>
   <!-- Meta Pixel Code -->
   <script>
@@ -101,22 +112,47 @@
   <main class="card" aria-live="polite">
     <header class="top">
       <div><div class="brand">Respira e Resolve</div><div class="mini">21 dias para voltar a sentir direção</div></div>
-      <div class="progress-wrap" aria-label="Progresso do quiz"><div id="progress" class="progress"></div></div>
+      <div class="progress-wrap hidden" aria-label="Progresso do quiz"><div id="progress" class="progress"></div></div>
     </header>
 
-    <section id="intro" class="content">
-      <p class="eyebrow">Respira e Resolve • um caminho de 21 dias</p>
-      <h1>Você não precisa resolver toda a sua vida hoje. Precisa encontrar um próximo passo.</h1>
-      <p class="lead">Um programa de autoconhecimento e organização emocional e financeira para reconhecer padrões, lidar melhor com a sobrecarga e transformar reflexões em pequenas atitudes possíveis — um dia de cada vez.</p>
-      <div class="intro-points">
-        <div>💭 Sem certo ou errado. Responda pelo que acontece de verdade.</div>
-        <div>🧭 O resultado não é diagnóstico. É uma ferramenta de autorreflexão.</div>
-        <div>⏱️ Você termina em cerca de 2 minutos.</div>
+    <section id="intro" class="content sales-page">
+      <div class="sales-fold first-fold">
+        <p class="eyebrow">RESPIRA E RESOLVE · 21 DIAS</p>
+        <h1>Você cuida de tudo.<br><em>Mas quem cuida de você?</em></h1>
+        <p class="lead">Acorda e a cabeça já começa: contas, filhos, trabalho, o que falta, o que pode dar errado. O dia mal começou — e você já está cansada.</p>
+        <p class="sales-emphasis">Você merece viver mais do que uma sequência de preocupações.</p>
+        <a class="cta checkout-link" href="https://pay.hotmart.com/Q107708986Q" target="_blank" rel="noopener">Quero começar a mudar meu rumo →</a>
+        <p class="microcopy">Um percurso guiado de 21 dias · Acesso pela Hotmart</p>
       </div>
-      <div class="hero-actions"><button class="cta" id="knowBtn" type="button">Conhecer o programa →</button><button class="cta cta-quiet" id="startBtn" type="button">Fazer o quiz de 2 minutos</button></div>
-      <p class="note">Suas respostas ficam apenas nesta página e não são enviadas para nós.</p>
+      <div class="sales-fold warm-fold">
+        <p class="eyebrow">Talvez você se reconheça</p>
+        <h2>Você diz “depois eu vejo isso”.<br>Mas o depois nunca chega.</h2>
+        <p>Você trabalha, resolve, ajuda. E quando pensa em algo para si, aparece outra urgência.</p>
+        <p>Às vezes nem é falta de dinheiro: é a sensação de nunca poder descansar por dentro.</p>
+        <p class="sales-emphasis">E se você pudesse começar por você, sem precisar resolver tudo de uma vez?</p>
+      </div>
+      <div class="sales-fold">
+        <p class="eyebrow">Existe um primeiro passo</p>
+        <h2>Não é sobre fazer mais.<br>É sobre carregar menos.</h2>
+        <p>Respira e Resolve é uma jornada de 21 dias para olhar com cuidado para sua história, suas emoções e sua relação com o dinheiro — e experimentar pequenas mudanças possíveis na vida real.</p>
+        <div class="sales-chips"><span>Áudios de reflexão</span><span>Exercícios guiados</span><span>Diário de bordo</span><span>Práticas para o dia a dia</span></div>
+        <a class="cta checkout-link" href="https://pay.hotmart.com/Q107708986Q" target="_blank" rel="noopener">Quero dar meu primeiro passo →</a>
+      </div>
+      <div class="sales-fold dark-fold">
+        <p class="eyebrow">Imagine abrir espaço</p>
+        <h2>Para respirar antes de responder.<br>Para dizer não sem se abandonar.<br>Para olhar o dinheiro sem fugir.</h2>
+        <p>Não existe fórmula mágica, nem promessa de vida perfeita. Existe um convite: reservar alguns minutos por dia para cuidar da pessoa que está por trás de todas as responsabilidades.</p>
+        <p class="sales-emphasis">Essa pessoa é você.</p>
+      </div>
+      <div class="sales-fold closing-fold">
+        <p class="eyebrow">Seu próximo capítulo</p>
+        <h2>Você não precisa esperar a vida ficar leve para começar a cuidar de si.</h2>
+        <p>Comece seus 21 dias no seu ritmo. Uma reflexão, uma escolha, um pequeno movimento de cada vez.</p>
+        <a class="cta checkout-link" href="https://pay.hotmart.com/Q107708986Q" target="_blank" rel="noopener">Sim, quero começar meus 21 dias →</a>
+        <p class="microcopy">Compra na Hotmart. Confira valor, formas de pagamento e condições antes de finalizar.</p>
+        <div class="quiet-options"><button id="knowBtn" type="button">Ver o que está incluído</button><button id="startBtn" type="button">Prefiro fazer o quiz gratuito</button></div>
+      </div>
     </section>
-
 
     <section id="program" class="content hidden" aria-label="Conhecer o programa">
       <button class="backlink" id="backIntro" type="button">← Voltar ao início</button>
@@ -284,10 +320,10 @@ const intro=document.getElementById('intro'),quiz=document.getElementById('quiz'
 const qCount=document.getElementById('qCount'),qText=document.getElementById('qText'),answers=document.getElementById('answers'),progress=document.getElementById('progress');
 
 const program=document.getElementById('program');
-function showProgram(){gtag('event','program_view',{content_type:'program_presentation'});intro.classList.add('hidden');result.classList.add('hidden');quiz.classList.add('hidden');interlude.classList.add('hidden');program.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
-function startQuiz(){gtag('event', 'quiz_start');intro.classList.add('hidden');program.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}
+function showProgram(){document.querySelector('.progress-wrap').classList.add('hidden');gtag('event','program_view',{content_type:'program_presentation'});intro.classList.add('hidden');result.classList.add('hidden');quiz.classList.add('hidden');interlude.classList.add('hidden');program.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+function startQuiz(){document.querySelector('.progress-wrap').classList.remove('hidden');gtag('event', 'quiz_start');intro.classList.add('hidden');program.classList.add('hidden');quiz.classList.remove('hidden');renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}
 document.getElementById('knowBtn').onclick=showProgram;
-document.getElementById('backIntro').onclick=()=>{program.classList.add('hidden');intro.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});};
+document.getElementById('backIntro').onclick=()=>{document.querySelector('.progress-wrap').classList.add('hidden');program.classList.add('hidden');intro.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});};
 document.getElementById('startBtn').onclick=startQuiz;
 document.getElementById('startFromProgram').onclick=startQuiz;
 
@@ -352,6 +388,14 @@ document.querySelectorAll('.offer a.cta').forEach(a=>a.addEventListener('click',
   if(typeof fbq==='function')fbq('track','InitiateCheckout');
   if(typeof ttq!=='undefined')ttq.track('InitiateCheckout');
 }));
+
+// Atribuição de cliques no checkout: mantém a medição GA4 e Meta independente do pagamento.
+document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    if(typeof gtag==='function'){gtag('event','checkout_click',{link_url:link.href,source_section:link.closest('section')?.id||'unknown'});gtag('event','begin_checkout',{currency:'BRL'});}
+    if(typeof fbq==='function'){fbq('track','InitiateCheckout');}
+  });
+});
 </script>
 </body>
 </html>
